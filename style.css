@@ -10,6 +10,9 @@
 
     --dark-blue: hsl(209, 23%, 22%); /* (Dark Mode Elements) */
     --very-dark-blue-bg: hsl(207, 26%, 17%); /* (Dark Mode Background) */
+
+    --font-size-m: 0.875rem;
+    --font-size-s: 0.75rem;
 }
 
  /* =================
@@ -21,11 +24,134 @@
 body {
     margin: 0;
     font-family: 'Nunito Sans', sans-serif;
+    overflow-x: hidden;
 }
+
 
  /* =================
         #Layout
     ================= */
 
+.hero-container {
+    margin: 2.5em 1em;
+    background-color: var(--white);
+}
 
+    .hero {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    hr {
+        margin-left: -2.5em;
+        margin-right: -2.5em;
+        border: 0 none;
+        height: .1px;
+        box-shadow: 2px 2px 5px var(--dark-grey);
+    }
+
+
+.main-content {
+    margin: 1.5em 1em;
+    background-color: var(--very-light-grey);
+}
+
+ /* =================
+        #Typography
+    ================= */
+
+.hero-text {
+    font-size: var(--font-size-m);
+}
+
+    .dark-mode-text {
+        font-size: var(--font-size-s);
+        font-weight: 600;
+    }
+
+/* =================
+      #Components
+   ================= */ 
+
+label {
+    display: flex;
+    align-items: center;
+}
+
+    label > input{
+        opacity: 0;
+    }
+
+    .theme-switch {
+      width: 1em;
+      height: 1em;
+      margin-left: -1em;
+      margin-right: .5em;
+      cursor: pointer;  
+    }
+
+
+.form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.5em;
+}
+
+    .search-field {
+        width: 100%;
+        height: 3em;
+        padding: 2em;
+        border: none;
+        border-radius: .3em;
+        box-shadow: 1px 1px 5px var(--dark-grey);
+    }
+
+    .search-field:focus {
+        outline: none;
+    }
+
+    ::placeholder {
+        padding-left: .5em;
+    }
+
+    ::-moz-placeholder {
+        text-align: left; 
+    }
+
+    .search-icon-position {
+        position: relative;
+    }
+
+    .search-icon-position i {
+        position: absolute;
+        left: 1em;
+        bottom: 1.5em;
+        color: var(--dark-grey);
+    }
     
+    .fa-search {
+        font-size: .8rem;
+        margin-right: .5em;
+    }
+
+    .filter-btn {
+        width: 50%;
+        height: 3em;
+        margin-top: 2.5em;
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+        padding: 1em 1em;
+        border: none;
+        border-radius: .3em;
+        box-shadow: 1px 1px 5px var(--dark-grey);
+        background-color: var(--white);
+        cursor: pointer;
+    }
+
+    .fa-chevron-down {
+        font-size: .8rem;
+    }
+
+   
