@@ -41,6 +41,8 @@
 
     <main class="main-content">
 
+        <!-- Search input and Filter button -->
+
         <form class="form">
 
             <div class="search-icon-position">
@@ -56,12 +58,55 @@
 
             <button class="filter-btn"
                     type="button"
+                    id="button"
             >
                 Filter by Region
                 
                 <i class="fa fa-chevron-down"></i>
             </button>
+
+            <div class="menu hide" id="dropdown">
+                <span>Africa</span>
+                <span>America</span>
+                <span>Asia</span>
+                <span>Europe</span>
+                <span>Oceania</span>
+            </div>
         </form>
+
+
+
+
+        <!-- Countries -->
+
+        <div class="country-card">
+            
+            <div class="country-preview">
+
+              <a class="image" href="" 
+                 rel="noopener noreferrer" 
+                 target="_blank"
+                 aria-label="This is an external link (opens in a new tab)"
+                 >
+                <img src="" alt="Chosen country flag"> <!-- Js code goes in src attribute -->
+              </a>
+            </div>
+
+            <div class="country-info">
+
+              <div class="country-detail">
+
+                <div class="country-title">
+                  <h3>Germany</h3>
+                </div>
+
+                <p>Population: JS code goes here<p>
+                <p>Region: JS code goes here</p>
+                <p>Capitol: JS code goes here</p>
+              </div>
+            </div>
+          </div>
     </main>
 </body>
+<script defer src="script.js"></script>
 </html>
