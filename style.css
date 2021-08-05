@@ -62,9 +62,20 @@ body {
 }
 
 
+@media screen and (min-width: 56.25em) {
+    
+    
+}
+
  /* ====================
     #Detail Page Layout
     ==================== */
+
+.detail-main-content {
+    width: 90%;
+    margin: auto;
+    padding: 0;
+}
 
 .back-btn-container {
     margin-top: 2.5em;
@@ -105,6 +116,7 @@ a:focus {
     text-decoration: none;
     color: var(--very-dark-blue);
 }
+
 
 /* =================
       #Components
@@ -253,6 +265,7 @@ a:focus {
 .back-btn {
     width: 6.5em;
     height: 2em;
+    padding: .3em 1.5em;
     text-align: center;
     border: none;
     border-radius: .3em;
@@ -270,7 +283,21 @@ a:focus {
     height: 14.3em;
 }
 
+
 .hide {
     display: none;
 }
+
+
+.border-btn {
+    margin-right: .6em;
+    padding: .3em 1.5em;
+    border: none;
+    border-radius: .3em;
+    box-shadow: 1px 1px 5px var(--dark-grey);
+    background-color: var(--white);
+    cursor: pointer;
+    font-size: var(--font-size-s);
+}
+
     
