@@ -211,7 +211,7 @@ a:focus {
     }
 
     .menu span {
-     padding: .5em;
+     padding: .5em .5em;
      cursor: pointer;
     }
 
