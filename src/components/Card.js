@@ -1,24 +1,32 @@
-import React, { Fragment } from "react";
+import React from "react";
 
-function Card() {
+import { Link } from "react-router-dom";
+
+function Card({country}) {
     return(
+        
         <div className="country-card">
 
             <div className="country-preview">
-                <img src="" alt="Chosen country flag" className="image"/> 
+                <Link to="/singlecountry">
+                    <img src={country.flag} 
+                         alt="Chosen country flag" 
+                         className="image"
+                    /> 
+                </Link>
             </div>
 
             <div className="country-info">
 
-                <div class="country-detail">
+                <div className="country-detail">
 
                 <div className="country-title">
-                  <h3>Germany</h3>
+                  <h3>{country.name}</h3>
                 </div>
 
-                <p>Population: JS code goes here</p>
-                <p>Region: JS code goes here</p>
-                <p>Capitol: JS code goes here</p>
+                <p>Population: {country.population}</p>
+                <p>Region: {country.region}</p>
+                <p>Capital: {country.capital}</p>
               </div>
             </div>
         </div>

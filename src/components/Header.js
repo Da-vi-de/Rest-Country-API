@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import ThemeSwitcher from "./ThemeSwitcher";
 
 function Header() {
@@ -6,8 +7,9 @@ function Header() {
         <header className="hero-container">
 
             <div className="hero">
-
-                <h1 className="hero-text">Where in the world?</h1>
+                <Link to="/">
+                    <h1 className="hero-text">Where in the world?</h1>
+                </Link>
                 <ThemeSwitcher />
             </div>
        </header>

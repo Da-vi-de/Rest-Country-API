@@ -36,7 +36,7 @@
       ================= */
   
   .hero-container {
-      min-height: 6em;
+      min-height: 6rem;
       background-color: var(--white);
       box-shadow: 0 0 5px var(--dark-grey); 
   }
@@ -45,7 +45,7 @@
           display: flex;
           flex-direction: row;
           justify-content: space-between;
-          padding: 2em 1.2em;
+          padding: 2rem 1.2rem;
       }
   
   
@@ -56,17 +56,7 @@
      
   }
   
-  
-  .country-cards-container {
-      padding: 2em 0;
-  }
-  
-  
-  @media screen and (min-width: 56.25em) {
-      
-      
-  }
-  
+ 
    /* ====================
       #Detail Page Layout
       ==================== */
@@ -78,7 +68,7 @@
   }
   
   .back-btn-container {
-      margin-top: 2.5em;
+      margin-top: 2.5rem;
   }
   
   .detail-container {
@@ -86,15 +76,15 @@
   } 
   
   .detail-page-img-position {
-      margin-top: 4em;
+      margin-top: 4rem;
   }
   
   .extra-detail-position {
-      margin: 2em 0;
+      margin: 2rem 0;
   }
   
   .border-countries-position {
-      margin-bottom: 3.75em;
+      margin-bottom: 3.75rem;
   }
   
    /* =================
@@ -129,26 +119,26 @@
   }
   
       .theme-switch {
-        width: 1em;
-        height: 1em;
-        margin-left: -1em;
-        margin-right: .5em;  
+        width: 1rem;
+        height: 1rem;
+        margin-left: -1rem;
+        margin-right: .5rem;  
       }
   
   
   .form {
       display: flex;
       flex-direction: column;
-      margin-top: 1.5em;
+      margin-top: 1.5rem;
       
   }
   
       .search-field {
           width: 100%;
-          height: 3em;
-          padding: 2em;
+          height: 3rem;
+          padding: 2rem;
           border: none;
-          border-radius: .3em;
+          border-radius: .3rem;
           box-shadow: 1px 1px 5px var(--dark-grey);
       }
   
@@ -157,7 +147,7 @@
       }
   
       ::placeholder {
-          padding-left: .5em;
+          padding-left: .5rem;
       }
   
       ::-moz-placeholder {
@@ -170,26 +160,26 @@
   
       .search-icon-position i {
           position: absolute;
-          left: 1em;
-          bottom: 1.5em;
+          left: 1rem;
+          bottom: 1.5rem;
           color: var(--dark-grey);
       }
       
       .fa-search {
           font-size: .8rem;
-          margin-right: .5em;
+          margin-right: .5rem;
       }
   
       .filter-btn {
           width: 60%;
-          height: 3em;
-          margin-top: 2.5em;
+          height: 3rem;
+          margin: 2.5rem 0;
           display: flex;
           justify-content: space-between;
           text-align: center;
-          padding: 1em 1em;
+          padding: 1rem 1rem;
           border: none;
-          border-radius: .3em;
+          border-radius: .3rem;
           box-shadow: 1px 1px 5px var(--dark-grey);
           background-color: var(--white);
           cursor: pointer;
@@ -202,16 +192,16 @@
       .menu {
           width: 48%;
           position: absolute;
-          margin-top: 8.5em;
+          margin-top: 8.5rem;
           display: flex;
           flex-direction: column;
           background-color: var(--white);
-          border-radius: .3em;
+          border-radius: .3rem;
           box-shadow: 1px 1px 5px var(--dark-grey);
       }
   
       .menu span {
-       padding: .5em .5em;
+       padding: .5rem .5rem;
        cursor: pointer;
       }
   
@@ -221,7 +211,8 @@
   
   
   .country-card {
-      border-radius: .3em;
+      margin-bottom: 2rem;
+      border-radius: .3rem;
       overflow: hidden;
       border-bottom: 1px solid rgba(0, 0, 0, 0.2);
       box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
@@ -231,20 +222,20 @@
   
       .image {
           display: block;
-          height: 10em;
+          max-height: 10rem;
           background-position: 50% 0;
           background-size: cover;
           background-attachment: scroll;
       }
       
-      .country-card .country-detail img {
-          width: 100%;
-          height: 100%;
+      .country-card .country-preview img {
+          max-width: 100%;
+          max-height: 100%;
           object-fit: cover;
       }
   
       .country-info {
-          padding: 1.7em;
+          padding: 1.7rem;
           justify-content: space-between;
       }
       
@@ -263,24 +254,25 @@
      ======================== */ 
   
   .back-btn {
-      width: 6.5em;
-      height: 2em;
-      padding: .3em 1.5em;
+      width: 6.5rem;
+      height: 2rem;
+      padding: .3rem 1.5rem;
       text-align: center;
       border: none;
-      border-radius: .3em;
+      border-radius: .3rem;
       box-shadow: 1px 1px 5px var(--dark-grey);
       background-color: var(--white);
+      cursor: pointer;
   }
   
       .fa-long-arrow-left {
-          margin-right: .2em;
+          margin-right: .2rem;
       }
   
   
   .detail-country-img {
-      width: 20.6em;
-      height: 14.3em;
+      width: 20.6rem;
+      height: 14.3rem;
   }
   
   
@@ -290,14 +282,17 @@
   
   
   .border-btn {
-      margin-right: .6em;
-      padding: .3em 1.5em;
+      margin-right: .6rem;
+      padding: .3rem 1.5rem;
       border: none;
-      border-radius: .3em;
+      border-radius: .3rem;
       box-shadow: 1px 1px 5px var(--dark-grey);
       background-color: var(--white);
       cursor: pointer;
       font-size: var(--font-size-s);
   }
   
+  @media screen and (min-width: 56.25em) {
       
+      
+}    
