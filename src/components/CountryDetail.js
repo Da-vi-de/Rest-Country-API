@@ -23,7 +23,7 @@ function CountryDetail() {
             </div>
 
             <article className="detail-info-position">
-                <h2></h2> 
+                <h2>Country name</h2> 
                 <p>Native name: </p>
                 <p>Population: </p>
                 <p>Region: </p>
