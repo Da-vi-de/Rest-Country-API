@@ -1,22 +1,31 @@
+
 import React, { useState, useEffect } from "react";
 
+// Create context so that it's possible moving data throughout the app
 const Context = React.createContext();
 
+// Create state that needs to be exported
 function ContextProvider({children}) {
+
     const [allCountries, setAllCountries] = useState([]);
+    
+    const urlAllCountries = 'https://restcountries.eu/rest/v2/all';
 
-    const url = 'https://restcountries.eu/rest/v2/all';
-
+ // Get all the countries from the API for Countries page
     useEffect(() => {
-        fetch(url)
-            .then(res => res.json())
-            .then(data => setAllCountries(data))
-    }, []);
-    console.log(allCountries);
+        const fetchAllCountriesData = async () => {
 
+            const res = await fetch(urlAllCountries);
+            const allCountries = await res.json();
+            setAllCountries(allCountries);
+        };
+       
+       fetchAllCountriesData()
+    }, []);
+    
     return(
         <Context.Provider value={{
-            allCountries
+            allCountries,
             }}>
             {children}
         </Context.Provider>
@@ -24,3 +33,6 @@ function ContextProvider({children}) {
 }
 
 export { ContextProvider, Context };
+
+
+

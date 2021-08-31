@@ -1,14 +1,14 @@
-import React from "react";
-
+import React  from "react";
 import { Link } from "react-router-dom";
 
 function Card({country}) {
+
     return(
         
         <div className="country-card">
 
             <div className="country-preview">
-                <Link to="/singlecountry">
+                <Link to={`/singlecountry/${country.name}`}>
                     <img src={country.flag} 
                          alt="Chosen country flag" 
                          className="image"
@@ -34,3 +34,7 @@ function Card({country}) {
 };
 
 export default Card;
+
+/*
+
+*/
