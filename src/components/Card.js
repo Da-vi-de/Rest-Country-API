@@ -35,6 +35,6 @@ function Card({country}) {
 
 export default Card;
 
-/*
 
-*/
+
+

@@ -6,7 +6,6 @@ import { ContextProvider } from "./Context"
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-// Wrap the app component with the tools needed to make everything work.
 ReactDOM.render(
   <ContextProvider>
     <Router>

@@ -7,9 +7,6 @@ import Header from "./components/Header";
 
 import './index.css';
 
-// Sequence of what is rendered
-// The step in second Route is needed for showing the single country when the image is clicked on Card component,
-// check Card component and SingleCountry page for a better understanding.
 function App() {
   return (
     <div>
@@ -30,3 +27,8 @@ function App() {
 }
 
 export default App;
+
+/*
+ 
+
+*/

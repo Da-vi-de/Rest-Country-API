@@ -281,7 +281,8 @@
   }
   
   
-  .border-btn {
+  .border {
+      margin-bottom: .5rem;
       margin-right: .6rem;
       padding: .3rem 1.5rem;
       border: none;
