@@ -9,8 +9,8 @@ function Countries() {
     const { allCountries, query, search, filter } = useContext(Context);
 
     const countries = allCountries.filter((item) => {
-
-        if (item.region === filter) {
+    
+       if (item.region === filter) {
         return search.some((newItem) => {
             return (
                 item[newItem].toString().toLowerCase()
@@ -25,7 +25,8 @@ function Countries() {
             );
          })
      }
-    }).map((country) => (
+     return false
+   }).map((country) => (
         <Card key={country.alpha2Code} country= {country} />
      ));
 
