@@ -129,8 +129,7 @@
   .form {
       display: flex;
       flex-direction: column;
-      margin-top: 1.5rem;
-      
+      margin-top: 1.5rem;  
   }
   
       .search-field {
@@ -170,46 +169,21 @@
           margin-right: .5rem;
       }
   
-      .filter-btn {
-          width: 60%;
-          height: 3rem;
-          margin: 2.5rem 0;
-          display: flex;
-          justify-content: space-between;
-          text-align: center;
-          padding: 1rem 1rem;
-          border: none;
-          border-radius: .3rem;
-          box-shadow: 1px 1px 5px var(--dark-grey);
-          background-color: var(--white);
-          cursor: pointer;
-      }
-  
-      .fa-chevron-down {
-          font-size: .8rem;
-      }
-  
-      .menu {
-          width: 48%;
-          position: absolute;
-          margin-top: 8.5rem;
-          display: flex;
-          flex-direction: column;
-          background-color: var(--white);
-          border-radius: .3rem;
-          box-shadow: 1px 1px 5px var(--dark-grey);
-      }
-  
-      .menu span {
-       padding: .5rem .5rem;
-       cursor: pointer;
-      }
-  
-      .menu span:hover {
-          background-color: var(--light-grey);
-      }
-  
-  
+      .filter {
+        width: 60%;
+        height: 3rem;
+        margin: 2.5rem 0;
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+        padding: 1rem 1rem;
+        border: none;
+        border-radius: .3rem;
+        box-shadow: 1px 1px 5px var(--dark-grey);
+        background-color: var(--white);
+        cursor: pointer;
+    }
+
   .country-card {
       margin-bottom: 2rem;
       border-radius: .3rem;

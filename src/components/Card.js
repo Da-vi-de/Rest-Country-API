@@ -24,7 +24,7 @@ function Card({country}) {
                   <h3>{country.name}</h3>
                 </div>
 
-                <p>Population: {country.population}</p>
+                <p>Population: {country.population.toLocaleString('en-US')}</p>
                 <p>Region: {country.region}</p>
                 <p>Capital: {country.capital}</p>
               </div>

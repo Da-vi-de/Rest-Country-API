@@ -4,10 +4,14 @@ import React, { useState, useEffect } from "react";
 // Create context so that it's possible moving data throughout the app
 const Context = React.createContext();
 
-// Create state that needs to be exported
-function ContextProvider({children}) {
 
+function ContextProvider({children}) {
+    
+    // Create state that needs to be exported
     const [allCountries, setAllCountries] = useState([]);
+    const [query, setQuery] = useState("");
+    const [filter, setFilter] = useState("All");
+    const [search] = useState(["name"]);
     
     const urlAllCountries = 'https://restcountries.eu/rest/v2/all';
 
@@ -26,7 +30,13 @@ function ContextProvider({children}) {
     return(
         <Context.Provider value={{
             allCountries,
-            }}>
+            query,
+            setQuery,
+            search,
+            filter,
+            setFilter
+            }}
+            >
             {children}
         </Context.Provider>
     )
