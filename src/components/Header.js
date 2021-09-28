@@ -1,15 +1,15 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
+import { Context } from "../Context";
 import ThemeSwitcher from "./ThemeSwitcher";
 
 function Header() {
+    const { darkMode } = useContext(Context);
+
     return(
-        <header className="hero-container">
+        <header className= {darkMode ? "hero-container-dark" : "hero-container"}>
 
             <div className="hero">
-                <Link to="/">
-                    <h1 className="hero-text">Where in the world?</h1>
-                </Link>
+                <h1 className="hero-text">Where in the world?</h1>
                 <ThemeSwitcher />
             </div>
        </header>

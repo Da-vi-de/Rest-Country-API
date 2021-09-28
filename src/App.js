@@ -4,9 +4,7 @@ import { BrowserRouter as Switch, Route } from "react-router-dom";
 import Countries from "./pages/Countries";
 import SingleCountry from "./pages/SingleCountry";
 import Header from "./components/Header";
-
 import './index.css';
-
 
 function App() {
   return (
@@ -28,8 +26,3 @@ function App() {
 }
 
 export default App;
-
-/*
- 
-
-*/

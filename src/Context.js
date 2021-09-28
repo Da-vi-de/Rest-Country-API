@@ -4,18 +4,17 @@ import React, { useState, useEffect } from "react";
 // Create context so that it's possible moving data throughout the app
 const Context = React.createContext();
 
-
 function ContextProvider({children}) {
     
-    // Create state that needs to be exported
+    // Only state that needs to be exported because is used in more components
     const [allCountries, setAllCountries] = useState([]);
     const [query, setQuery] = useState("");
-    const [filter, setFilter] = useState("All");
-    const [search] = useState(["name"]);
+    const [filterData, setFilterData] = useState("All");
+    const [darkMode, setDarkMode] = useState(false);
     
-    const urlAllCountries = 'https://restcountries.eu/rest/v2/all';
+    const urlAllCountries = 'https://restcountries.com/v2/all';
 
- // Get all the countries from the API for Countries page
+ // Get all the countries from the API
     useEffect(() => {
         const fetchAllCountriesData = async () => {
 
@@ -26,15 +25,16 @@ function ContextProvider({children}) {
        
        fetchAllCountriesData()
     }, []);
-    
+ 
     return(
         <Context.Provider value={{
             allCountries,
             query,
             setQuery,
-            search,
-            filter,
-            setFilter
+            filterData,
+            setFilterData,
+            darkMode,
+            setDarkMode
             }}
             >
             {children}
@@ -43,6 +43,3 @@ function ContextProvider({children}) {
 }
 
 export { ContextProvider, Context };
-
-
-
