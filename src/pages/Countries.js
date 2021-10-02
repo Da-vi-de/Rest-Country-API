@@ -13,7 +13,7 @@ function Countries() {
 
     const [search] = useState(["name"]);
     const [visibleCards, setVisibleCards] = useState(49);
-
+   
     const showMoreCountries = () => {
         setVisibleCards (prevVisibleCards => prevVisibleCards + 49)
     };
@@ -47,17 +47,20 @@ function Countries() {
         <>
         <main className="main-content">
              <SearchFilterCountry />
-            { countries }
+             <section className="cards-container">
+                { countries }
+            </section>
+            
             <div className="place-load-more-btn">
-                <button className={
-                                    `
-                                    ${countries.length !== 248 ? "load-more-btn" : "hide"} 
-                                    ${darkMode ? "load-more-btn-dark" : "load-more-btn"}`
-                                  } 
+            
+                <button className= {`
+                                    ${countries.length !== allCountries.length ? "load-more-btn" : "hide"}
+                                    ${darkMode ? "load-more-btn-dark" : "load-more-btn"}
+                                   `}
                         onClick={showMoreCountries}
                 >
                 Load More
-               </button>
+               </button> 
            </div>
         </main>
 

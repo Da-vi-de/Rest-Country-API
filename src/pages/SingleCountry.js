@@ -10,7 +10,7 @@ function SingleCountry() {
   
   const {
     alpha2Code,
-    flags,
+    flag,
     nativeName,
     population,
     region,
@@ -22,10 +22,11 @@ function SingleCountry() {
     borders
   } = country;
 
-  // The old API allowed me to use ternary operator in render
+  // This structure has worked perfectly with the old API.
   // Unfortunately the old API is no more available (the change occured nearly at the end of the project), 
   // the new one is almost the same except for borders. If a country has no border countries, there's no property
-  // so i get undefined error because of the above destructuring. 
+  // so the page is blank because of the above destructuring. Currently The API is unstable, i had other issues
+  // but they fix them.
   
   const borderCountries = borders.map(border => {
       const nation = allCountries.find (
@@ -35,7 +36,7 @@ function SingleCountry() {
         name: nation.name
       }
     })
-   
+
   return (
     <main className="main-content">
       <div className="back-btn-container">
@@ -48,7 +49,7 @@ function SingleCountry() {
       </div> 
           <div className="detail-container" key={alpha2Code}>
             <div className="detail-page-img-position">
-              <img src={flags.svg} alt="country" className="detail-country-img" />
+              <img src={flag} alt="Country flag" className="detail-country-img" />
             </div>
 
             <article className="detail-info-position">
@@ -69,7 +70,8 @@ function SingleCountry() {
     
           <div className="border-countries-position">
             <p>Border Countries: </p>
-            {borderCountries.map((country, index) => {
+            {borderCountries.length > 0 ? 
+            borderCountries.map((country, index) => {
                       return (
                         <Link
                           to={`/singlecountry/${country.name}`}
@@ -80,8 +82,9 @@ function SingleCountry() {
                             {country.name}
                           </button>
                         </Link>
-                      );
-                    }) 
+                      )
+                    }) :
+                    <p> This nation has no border countries</p>
                  }
         </div>
       </div>
@@ -90,3 +93,7 @@ function SingleCountry() {
 }
 
 export default SingleCountry;
+
+//
+
+//

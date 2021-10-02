@@ -23,10 +23,10 @@ function SearchFilterCountry() {
               </label>
             </div>
 
-        <select className=  {darkMode ? "filter filter-dark " : "filter"}
-                aria-labelledby="dropdownMenu"
+        <select className=  {darkMode ? "select-dark" : "select"}
                 onChange={e => setFilterData(e.target.value)}
         >
+
             <option value="All">Filter by Region</option>
             <option value="Africa">Africa</option>
             <option value="Americas">America</option>

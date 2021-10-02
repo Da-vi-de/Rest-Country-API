@@ -4,14 +4,15 @@ import { Context } from "../Context";
 
 function Card({country}) {
   const  { darkMode } = useContext(Context);
+
     return(
-        
+      
         <div className= {darkMode ? "country-card-dark" : "country-card"}>
 
             <div className="country-preview">
                 <Link to={`/singlecountry/${country.name}`}>
-                    <img src={country.flags.svg} 
-                         alt="Chosen country flag" 
+                    <img src={country.flag} 
+                         alt="Country flag" 
                          className="image"
                     /> 
                 </Link>
@@ -22,7 +23,7 @@ function Card({country}) {
                 <div className="country-detail">
 
                 <div className="country-title">
-                  <h3>{country.name}</h3>
+                  <h1>{country.name}</h1>
                 </div>
 
                 <p>Population: <span>{country.population.toLocaleString('en-US')}</span></p>
@@ -31,6 +32,7 @@ function Card({country}) {
               </div>
             </div>
         </div>
+       
     );
 };
 
