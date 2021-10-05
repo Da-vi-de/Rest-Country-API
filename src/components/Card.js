@@ -10,9 +10,11 @@ function Card({country}) {
         <div className= {darkMode ? "country-card-dark" : "country-card"}>
 
             <div className="country-preview">
-                <Link to={`/singlecountry/${country.name}`}>
+                <Link to={`/singlecountry/${country.name}`}
+                      aria-label="click on the flag country to get acces to more info"
+                >
                     <img src={country.flag} 
-                         alt="Country flag" 
+                         alt="Country flag route" 
                          className="image"
                     /> 
                 </Link>

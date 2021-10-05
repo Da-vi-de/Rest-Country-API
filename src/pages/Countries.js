@@ -4,6 +4,9 @@ import { Context } from "../Context";
 import Card from "../components/Card";
 import SearchFilterCountry from "../components/SearchFilterCountry";
 
+// The main page in which resides most of the functionality stored in variable countries:
+// Load definite results, filter by region and search for a country. Iterate all countries
+// and make an instance of the Card component so that there's a card for each country.
 function Countries() {
     const { allCountries, 
             query, 
@@ -15,12 +18,12 @@ function Countries() {
     const [visibleCards, setVisibleCards] = useState(49);
    
     const showMoreCountries = () => {
-        setVisibleCards (prevVisibleCards => prevVisibleCards + 49)
+        setVisibleCards (prevVisibleCards => prevVisibleCards + 49);
     };
 
     const handleScroll = () => {
-        window.scrollTo({behavior: 'smooth', top: 0 })
-    }
+        window.scrollTo({behavior: 'smooth', top: 0 });
+    };
 
     const countries = allCountries.slice(0, visibleCards).filter((item) => {
        if (item.region === filterData) {
@@ -54,7 +57,7 @@ function Countries() {
             <div className="place-load-more-btn">
             
                 <button className= {`
-                                    ${countries.length !== allCountries.length ? "load-more-btn" : "hide"}
+                                    ${countries.length !== allCountries.length  ? "load-more-btn" : "hide"}
                                     ${darkMode ? "load-more-btn-dark" : "load-more-btn"}
                                    `}
                         onClick={showMoreCountries}
@@ -68,7 +71,7 @@ function Countries() {
              className="top"
         >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6"><path d="M12 6H0l6-6z"/></svg>
-            <span className="screen-reader-text">Back to top</span>
+            <span  className="screen-reader-text">Back to top</span>
         </div>
      </>
     );

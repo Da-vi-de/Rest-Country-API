@@ -17,7 +17,7 @@ function App() {
         </Route>
 
         <Route path="/singlecountry/:name" >
-        <SingleCountry />
+          <SingleCountry />
         </Route>
       </Switch>
      

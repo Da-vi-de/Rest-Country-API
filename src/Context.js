@@ -18,9 +18,15 @@ function ContextProvider({children}) {
     useEffect(() => {
         const fetchAllCountriesData = async () => {
 
-            const res = await fetch(urlAllCountries);
-            const allCountries = await res.json();
-            setAllCountries(allCountries);
+            try {
+                const res = await fetch(urlAllCountries);
+
+                const allCountries = await res.json();
+                setAllCountries(allCountries);
+
+                } catch(err) {
+                    alert('Problem getting countries');
+            };
         };
        
        fetchAllCountriesData()

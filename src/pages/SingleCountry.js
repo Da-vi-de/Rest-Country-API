@@ -2,6 +2,9 @@ import React, { useContext } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../Context";
 
+// Get the single country and take advantage of useParams so that
+// the variable name can be used to render each country.
+// Destructure the country object and pass data in render.
 function SingleCountry() {
   const { allCountries, darkMode } = useContext(Context);
   const { name } = useParams();
@@ -23,7 +26,7 @@ function SingleCountry() {
   } = country;
 
   // This structure has worked perfectly with the old API.
-  // Unfortunately the old API is no more available (the change occured nearly at the end of the project), 
+  // Unfortunately the old API is no longer available (the change occured nearly at the end of the project), 
   // the new one is almost the same except for borders. If a country has no border countries, there's no property
   // so the page is blank because of the above destructuring. Currently The API is unstable, i had other issues
   // but they fix them.
@@ -93,7 +96,3 @@ function SingleCountry() {
 }
 
 export default SingleCountry;
-
-//
-
-//

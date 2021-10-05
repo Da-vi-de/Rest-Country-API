@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Context } from "../Context";
 
+// The two filters in which resides the target value
 function SearchFilterCountry() {
     const { query, setQuery, setFilterData, darkMode } = useContext(Context);
 
@@ -12,6 +13,7 @@ function SearchFilterCountry() {
             <div className="search-icon-position">
 
                 <i className=  {darkMode ? "fa fa-search icon darkmode" : "fa fa-search icon"}></i>
+
               <label htmlFor="search-form" >
                 <input type="search"
                        name=  "search-form"
@@ -22,18 +24,19 @@ function SearchFilterCountry() {
                 />
               </label>
             </div>
+      
+            <select className=  {darkMode ? "select-dark" : "select"}
+                    aria-label="filter by region"
+                    onChange={e => setFilterData(e.target.value)}
+            >
 
-        <select className=  {darkMode ? "select-dark" : "select"}
-                onChange={e => setFilterData(e.target.value)}
-        >
-
-            <option value="All">Filter by Region</option>
-            <option value="Africa">Africa</option>
-            <option value="Americas">America</option>
-            <option value="Asia">Asia</option>
-            <option value="Europe">Europe</option>
-            <option value="Oceania">Oceania</option>
-        </select>
+                <option value="All">Filter by Region</option>
+                <option value="Africa">Africa</option>
+                <option value="Americas">America</option>
+                <option value="Asia">Asia</option>
+                <option value="Europe">Europe</option>
+                <option value="Oceania">Oceania</option>
+            </select>
        </form>
     );
 };
