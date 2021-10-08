@@ -9,16 +9,16 @@ function ThemeSwitcher() {
     };
     
     useEffect(() => {
-        if (darkMode) {
-          document.body.classList.add('dark');
-        } else {
-          document.body.classList.remove('dark');
-        }
-      }, [darkMode]); 
+      if (darkMode) {
+        document.body.classList.add('dark');
+      } else {
+        document.body.classList.remove('dark');
+      }
+    }, [darkMode]); 
 
     return(
         <button className={`dark-mode-btn ${darkMode ? "text-for-dark-mode" : "dark-mode-text "}`}
-                aria-label="Change theme"
+                aria-label="Light mode / Dark mode"
                 onClick={handleTheme}
         >
             {darkMode ?

@@ -6,8 +6,9 @@ const Context = React.createContext();
 
 function ContextProvider({children}) {
     
-    // Only state that needs to be exported because is used in more components
+    // Only state that needs to be exported because it's used in more components
     const [allCountries, setAllCountries] = useState([]);
+    
     const [query, setQuery] = useState("");
     const [filterData, setFilterData] = useState("All");
     const [darkMode, setDarkMode] = useState(false);
@@ -35,10 +36,10 @@ function ContextProvider({children}) {
     return(
         <Context.Provider value={{
             allCountries,
-            query,
-            setQuery,
             filterData,
             setFilterData,
+            query,
+            setQuery,
             darkMode,
             setDarkMode
             }}

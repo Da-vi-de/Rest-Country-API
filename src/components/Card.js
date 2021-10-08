@@ -14,7 +14,7 @@ function Card({country}) {
                       aria-label="click on the flag country to get acces to more info"
                 >
                     <img src={country.flag} 
-                         alt="Country flag route" 
+                         alt= {`${country.name} flag`} 
                          className="image"
                     /> 
                 </Link>
