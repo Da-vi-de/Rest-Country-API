@@ -6,25 +6,25 @@ function SearchFilterCountry() {
     const { query, setQuery, setFilterData, darkMode } = useContext(Context);
 
     return (
-        
+    
         <form className= "form"
-              onSubmit={(e) => e.preventDefault()} >
-            
+              onSubmit={(e) => e.preventDefault()}
+        >
             <div className="search-icon-position">
 
-                <i className=  {darkMode ? "fa fa-search icon darkmode" : "fa fa-search icon"}></i>
+            <i className={`fa fa-search icon${darkMode ? "fa darkmode" : ""}`}></i>
 
-              <label htmlFor="search-form" >
+              <label htmlFor="search" className="hide">Search for a country</label>
                 <input type="search"
+                       id="search"
                        name=  "search-form"
                        className= {darkMode ? "search-field-dark" : "search-field"}
                        placeholder="Search for a country..." 
                        value={query}
                        onChange={(e) => setQuery(e.target.value)}
                 />
-              </label>
             </div>
-      
+            
             <select className=  {darkMode ? "select-dark" : "select"}
                     aria-label="filter by region"
                     onChange={e => setFilterData(e.target.value)}

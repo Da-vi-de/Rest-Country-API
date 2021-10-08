@@ -8,15 +8,16 @@ import SearchFilterCountry from "../components/SearchFilterCountry";
 // Load definite results, filter by region and search for a country. Iterate all countries
 // and make an instance of the Card component so that there's a card for each country.
 function Countries() {
-    const { allCountries, 
+    const { allCountries,
             query, 
             filterData,
             darkMode 
           } = useContext(Context);
 
-    const [search] = useState(["name"]);
+    const searchField = ["name"];
+    
     const [visibleCards, setVisibleCards] = useState(49);
-   
+    
     const showMoreCountries = () => {
         setVisibleCards (prevVisibleCards => prevVisibleCards + 49);
     };
@@ -25,33 +26,27 @@ function Countries() {
         window.scrollTo({behavior: 'smooth', top: 0 });
     };
 
-    const countries = allCountries.slice(0, visibleCards).filter((item) => {
-       if (item.region === filterData) {
-        return search.some((newItem) => {
-            return (
-                item[newItem].toString().toLowerCase()
-                             .indexOf(query.toLowerCase()) > -1
-            );
-        });
-     } else if (filterData === "All") {
-         return search.some((newItem) => {
-            return (
-                item[newItem].toString().toLowerCase()
-                             .indexOf(query.toLowerCase()) > -1 
-            );
+    const countries = allCountries.filter((item) => {
+      if (filterData === "All" || item.region === filterData) {
+         return searchField.some((newItem) => {
+            return (item[newItem].toString().toLowerCase().indexOf(query)) > -1;
          });
      }
      return false
-   }).map((country) => (
-        <Card key={country.alpha2Code} country= {country} />
-     ));
+   }).slice(0, visibleCards).map((country) => (
+    <Card key={country.alpha2Code} country= {country} />
+ ));
 
+ // Although it seems misleading or inappropriate, in order to avoid 
+ // accessibility issues i had to add a landmark region
+ // for the back-to-top button, considering it's placed at the end of the
+ // page and also for its role, i decided to use a footer landmark!
     return (
         <>
         <main className="main-content">
              <SearchFilterCountry />
              <section className="cards-container">
-                { countries }
+                {countries}
             </section>
             
             <div className="place-load-more-btn">

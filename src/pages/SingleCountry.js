@@ -22,14 +22,17 @@ function SingleCountry() {
     topLevelDomain,
     currencies,
     languages,
-    borders
+    borders = []
   } = country;
+
 
   // This structure has worked perfectly with the old API.
   // Unfortunately the old API is no longer available (the change occured nearly at the end of the project), 
   // the new one is almost the same except for borders. If a country has no border countries, there's no property
   // so the page is blank because of the above destructuring. Currently The API is unstable, i had other issues
-  // but they fix them.
+  // but they fix them. 
+  // EDIT: I fixed it after publishing it on the platform by adding the empty array you see above, 
+  // thanks to Anton member of FEM!
   
   const borderCountries = borders.map(border => {
       const nation = allCountries.find (
@@ -52,7 +55,7 @@ function SingleCountry() {
       </div> 
           <div className="detail-container" key={alpha2Code}>
             <div className="detail-page-img-position">
-              <img src={flag} alt="Country flag" className="detail-country-img" />
+              <img src={flag} alt={`${country.name} flag`} className="detail-country-img" />
             </div>
 
             <article className="detail-info-position">
